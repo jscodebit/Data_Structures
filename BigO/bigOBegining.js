@@ -4,12 +4,14 @@ const everyone = ["Saab", "Volvo", "BMW", "Banana", "Orange", "Apple", "Mango", 
 
 const large = new Array(10000).fill('nemo');
 
+// Big O Rule 1
 function findNemo(array){
     let t0 = performance.now();
     for(let i = 0; i< array.length; i++){
 
         if(array[i] === 'nemo'){
             console.log('Found Nemo!');
+            break;
         }
     }
     let t1 = performance.now();
@@ -45,3 +47,43 @@ function funChallange(input){
 }
 
 // 3 O(1) + 4 O(n) => Big O(3 + 4n)
+
+//Big O Calculation
+
+function anotherFunChallange(input){
+    let a = 5; //O(1)
+    let b = 10; //O(1)
+    let c = 50; //O(1)
+    for(let i = 0; i < input; i++){
+        let x = i +1; //O(n)
+        let y = i +2; //O(n)
+        let z = i +3; //O(n)
+    }
+    for(let j = 0; j < input; j++){
+        let p = j *2; //O(n)
+        let q = j * 2; //O(n)
+    }
+    let whoAnI = "I dont know"; //O(1)
+}
+
+// Big O(4 + 5n)
+
+//Big O Rule 2
+
+function printFirstItemThenFirstHalfThenSayHi100Times(items){
+    console.log(items[0]); //O(1)
+
+    var middleIndex = Math.floor(items.length/2); //O(1)
+    var index = 0;
+
+    while(index < middleIndex){ //O(n/2)
+        console.log(items[index]); //O(1)
+        index++; //O(1)
+    }
+    for(var i = 0; i < 100; i++){
+        console.log('hi'); //O(100)
+    }
+}
+
+//O(n/2 + 100 + 4) => O(n/2 + 104)
+// Rule 2 says drop the constants O(n)
