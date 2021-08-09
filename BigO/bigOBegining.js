@@ -87,3 +87,83 @@ function printFirstItemThenFirstHalfThenSayHi100Times(items){
 
 //O(n/2 + 100 + 4) => O(n/2 + 104)
 // Rule 2 says drop the constants O(n)
+
+function compressBoxesTwice(boxes){
+    boxes.forEach(function(box){
+        console.log(box); //O(n)
+    });
+    boxes.forEach(function(box){
+        console.log(box); //O(n)
+    });
+}
+
+//O(2n) => O(n)
+
+function compressBoxesTwice(boxes1, boxes2){
+    boxes1.forEach(function(box){
+        console.log(box); //O(a)
+    });
+    boxes2.forEach(function(box){
+        console.log(box); //O(b)
+    });
+}
+//Rule 3 : Different terms for input
+//O(a+b)
+
+//ANother common pattern with Big O is nested loops O(n^2)
+
+//Log all apirs of array
+
+const boxes2 = ['a', 'b', 'c', 'd', 'e'];
+
+function logAllPairsOfArray(array){
+    for(let i = 0; i < array.length; i++){
+        for(let j = 0; j < array.length; j++){
+            console.log(array[i], array[j]);
+        }
+    }
+}
+logAllPairsOfArray(boxes2);
+
+/* When we see loops that are nested we use multiplication
+Big O(n *n) Quadratic Time
+*/
+
+//Big O Rule 4:
+/*first part O(n) second part O(n^2)*/
+const numbers = [1,2,3,4,5]
+function printAllNumbersThenAllPAirSums(numbers){
+    console.log('These are the numbers:');
+    numbers.forEach(function(num){
+        console.log(num);
+    });
+
+    console.log('and these are their sums:');
+    numbers.forEach(function(num1){
+        numbers.forEach(function(num2){
+            console.log(num1 + num2);
+        });
+    });
+}
+printAllNumbersThenAllPAirSums(numbers);
+//5 (25 + 15 + 100 + 2.5)
+/*O(x^2 + 3x + 100 + x/2) x^2 grows significantly more, wiht this in mind we drop the non dominants*/
+/*With Big 0 we worry about scaling, in this case the pre-dominently scalable factor id n^2*/
+
+/*Space Complexity*/
+
+function boo(n){
+    for(let i = 0; i < n; i++){
+        console.log('boooo!');
+    }
+}
+boo([1,2,3,4,5,6]);
+
+function arrayOfHintTimes(n){
+    let hiArray = [];
+    for(let i = 0; i < n; i++){
+        hiArray[i] = 'Hi';
+    }
+    return hiArray;
+}
+arrayOfHintTimes(10); //O(n)
