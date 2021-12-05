@@ -6,23 +6,28 @@ const large = new Array(10000).fill('nemo');
 
 // Big O Rule 1
 function findNemo(array){
-    let t0 = performance.now();
-    for(let i = 0; i< array.length; i++){
-
-        if(array[i] === 'nemo'){
+    //let t0 = performance.now();
+    for(let i = 0; i< array.length; i++){ //O(n)
+        console.log('running');
+        if(array[i] === 'nemo'){ //O(n or less than n)
             console.log('Found Nemo!');
             break;
         }
     }
-    let t1 = performance.now();
-    console.log('Call to find nemo took : '+ (t1-t0));
+    //let t1 = performance.now();
+    //console.log('Call to find nemo took : '+ (t1-t0));
 }
 
 findNemo(large); //O(n) --> Linear Time (It takes linear time to find nemo) Complexity is Fair enough
 
-/*This example is to understand that this is the instruction we are giving to our computer, to find the nemo. Its called the runtime. How long does it take to run a certain problem through a function or a ceratin task. How can we measure the Big O of something like this.  or the efficiency of this code. Next we shall try to measure the performance. And see how Big O allows us to measure scalability */
+/*This example is to understand that this is the instruction we are giving to our computer, to find 
+the nemo. Its called the runtime. How long does it take to run a certain problem through a function
+ or a ceratin task. How can we measure the Big O of something like this.  or the efficiency of this code.
+  Next we shall try to measure the performance. And see how Big O allows us to measure scalability */
 
-/*Calculating the number of operations a computer has to perform. Because each operation takes time to perform. from one element to 10 elements with thousands of inputs how does the efficiency of this function increases.*/
+/*Calculating the number of operations a computer has to perform. Because each operation takes time to
+ perform. from one element to 10 elements with thousands of inputs how does the efficiency of this 
+ function increases.*/
 
 let boxes = ['box1', 'box2'];
 function compressFirstBox(boxes){
